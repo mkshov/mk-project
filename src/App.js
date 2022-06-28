@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import HeaderContextProvider from "./Components/contexts/headerContext";
+import { BrowserRouter } from "react-router-dom";
+import Routing from "./Routing";
+import Header from "./Components/headerMk/Header";
+import BackDrop from "./Components/headerMk/BackDrop";
+import Sidebar from "./Components/headerMk/Sidebar";
+import { Container } from "@mui/material";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HeaderContextProvider>
+      <BrowserRouter>
+        <Header />
+        {/* <Container
+          maxWidth="lg"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column",
+            flexFlow: "wrap",
+            backgroundColor: "white",
+          }}
+        > */}
+        <Sidebar />
+        <BackDrop />
+        <Routing />
+        {/* </Container> */}
+      </BrowserRouter>
+    </HeaderContextProvider>
   );
 }
 
