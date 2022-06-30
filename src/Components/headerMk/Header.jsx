@@ -17,7 +17,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import "./Header.css";
-import { headerContext } from "../contexts/headerContext";
+import { headerContext } from "../../contexts/headerContext";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -62,14 +62,18 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Header() {
   const [navColor, setnavColor] = useState("transparent");
   const listenScrollEvent = () => {
-    window.scrollY > 200 ? setnavColor("#252734") : setnavColor("transparent");
+    window.scrollY > 50
+      ? setnavColor(" #8c8c8c9c")
+      : setnavColor("transparent");
   };
+
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
     return () => {
       window.removeEventListener("scroll", listenScrollEvent);
     };
   }, []);
+
   const { toggleSidebar } = useContext(headerContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -142,63 +146,60 @@ export default function Header() {
         justifyContent: "center",
       }}
     >
-      <Container>
-        <Box
-          style={{
-            width: "95%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-around",
-          }}
-        >
-          <Box className="tengizText">
+      <Box
+        style={{
+          width: "1000px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-around",
+        }}
+      >
+        <Box className="tengizText">
+          <Typography
+            className="tengizTyp"
+            onClick={() => navigate(`/`)}
+            noWrap
+            style={{
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              fontSize: "1.25rem",
+            }}
+          >
+            GUCCI
+          </Typography>
+        </Box>
+        <Box style={{ width: "100%", display: "flex", justifyContent: "end" }}>
+          <Box className="header-box">
             <Typography
-              className="tengizTyp"
+              className="text"
+              fontWeight={400}
               onClick={() => navigate(`/`)}
-              noWrap
-              style={{
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                fontSize: "1.25rem",
-              }}
             >
-              GUCCI
+              HOME
             </Typography>
           </Box>
-          <Box
-            style={{ width: "100%", display: "flex", justifyContent: "end" }}
-          >
-            <Box className="header-box">
-              <Typography
-                className="text"
-                fontWeight={400}
-                onClick={() => navigate(`/`)}
-              >
-                HOME
-              </Typography>
-            </Box>
-            <Box className="header-box">
-              <Typography
-                className="text"
-                fontWeight={400}
-                onClick={() => navigate(`/mens`)}
-              >
-                MEN'S
-              </Typography>
-            </Box>
-            <Box className="header-box">
-              <Typography
-                className="text"
-                fontWeight={400}
-                onClick={() => navigate(`/womens`)}
-              >
-                WOMEN'S
-              </Typography>
-            </Box>
+          <Box className="header-box">
+            <Typography
+              className="text"
+              fontWeight={400}
+              onClick={() => navigate(`/mens`)}
+            >
+              MEN'S
+            </Typography>
           </Box>
-          <Box style={{ display: "flex" }}>
-            {/* <IconButton
+          <Box className="header-box">
+            <Typography
+              className="text"
+              fontWeight={400}
+              onClick={() => navigate(`/womens`)}
+            >
+              WOMEN'S
+            </Typography>
+          </Box>
+        </Box>
+        <Box style={{ display: "flex" }}>
+          {/* <IconButton
             size="large"
             edge="end"
             aria-label="account of current user"
@@ -209,7 +210,7 @@ export default function Header() {
           >
             <AccountCircle className="acc-icon" sx={{ fontSize: 45 }} />
           </IconButton> */}
-            {/* <Button
+          {/* <Button
             onClick={handleProfileMenuOpen}
             variant="contained"
             style={{ borderRadius: "20px" }}
@@ -217,15 +218,11 @@ export default function Header() {
           >
             Sign up
           </Button> */}
-            <Box onClick={() => toggleSidebar()}>
-              <MenuRoundedIcon
-                style={{ fontSize: "40px" }}
-                className="burger"
-              />
-            </Box>
+          <Box onClick={() => toggleSidebar()}>
+            <MenuRoundedIcon style={{ fontSize: "40px" }} className="burger" />
           </Box>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 }

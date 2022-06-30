@@ -11,7 +11,7 @@ body {
 }
 .tool-bar {
   /* background-color: rgb(51, 51, 51, 0.2); */
-  background: linear-gradient(to bottom, #050505 0, rgba(37, 33, 30, 0) 99%);
+  background: linear-gradient(to bottom, #6b6b6b73 0, rgba(37, 33, 30, 0) 99%);
   /* background: none; */
   /* border: 2px solid black; */
   /* height: 135px; */
@@ -25,9 +25,9 @@ body {
   position: fixed;
   cursor: pointer;
 }
-.tool-bar:hover {
+/* .tool-bar:hover {
   background-color: rgb(51, 51, 51) !important;
-}
+} */
 .header-box {
   display: flex;
   justify-content: center;
@@ -44,7 +44,7 @@ body {
 .text:hover::after {
   content: "";
   width: 19%;
-  height: 2px;
+  height: 3px;
   background: white;
   position: absolute;
   bottom: -4px;
@@ -63,6 +63,7 @@ body {
 .sidebar {
   position: fixed;
   background-color: white;
+  /* background-color: rgb(217, 217, 217); */
   border-radius: 20px;
   /* background: none; */
   color: black;

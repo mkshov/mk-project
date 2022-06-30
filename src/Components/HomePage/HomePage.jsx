@@ -49,8 +49,8 @@ const HomePage = () => {
       <section
         id="feature"
         className="section-p1"
-        data-aos="flip-up"
-        data-aos-duration="1500"
+        // data-aos="flip-up"
+        // data-aos-duration="1500"
       >
         <div className="fe-box">
           <img src={f1} alt="lol" />
@@ -78,12 +78,7 @@ const HomePage = () => {
         </div>
       </section>
       {/* ---------------------------------------------------- */}
-      <section
-        id="product1"
-        className="section-p1"
-        data-aos="flip-down"
-        data-aos-duration="1500"
-      >
+      <section id="product1" className="section-p1">
         <h2>Featured Products</h2>
         <p>Summer Collection New Morden Design</p>
         <div className="pro-container">

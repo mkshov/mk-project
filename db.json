@@ -1,0 +1,12 @@
+{
+  "mens": [
+    {
+      "title": "Gucci & Supreme",
+      "subtitle": "vsem privet i eto emir",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa laboriosam illum beatae qui labore atque minus vitae. At cumque iste soluta, cum nam aut odio architecto ut voluptatibus ab, atque provident! Unde aliquid aliquam, itaque vel, iste exercitationem officia iusto molestias sint repudiandae aspernatur ea cumque neque dignissimos mollitia pariatur est dolore labore quibusdam praesentium dolorem rerum aperiam. Ad quam, distinctio nihil placeat blanditiis impedit, ut, rem saepe porro nostrum eius quos laboriosam quibusdam magni fugiat id dolorum adipisci aliquam nulla! Nostrum, magni. In rerum earum, sapiente possimus fuga incidunt blanditiis natus accusantium facilis iste neque repellat laudantium odio dolorem est dignissimos vitae expedita fugiat consequatur laboriosam minus autem porro? Iusto, consequatur! Eos quibusdam corrupti nihil. Vel iste quas repudiandae porro possimus architecto minus, voluptate suscipit laboriosam corporis, consequuntur commodi dolorum ipsum ratione! Magnam provident id harum illum. Repudiandae, fugit! Earum a iste nesciunt nihil magnam iure est nostrum quibusdam.",
+      "price": "130.00",
+      "image": "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
+      "id": 1
+    }
+  ]
+}
