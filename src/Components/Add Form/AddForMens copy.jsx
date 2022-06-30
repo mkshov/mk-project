@@ -3,9 +3,9 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { clothesContext } from "../../contexts/clothesContext";
 
-const AddForMens = () => {
+const AddForWomens = () => {
   const navigate = useNavigate();
-  const { createMens } = useContext(clothesContext);
+  const { createWomens } = useContext(clothesContext);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [image, setImage] = useState("");
@@ -16,7 +16,7 @@ const AddForMens = () => {
   const [price, setPrice] = useState("");
 
   function handleSave() {
-    let newMens = {
+    let newWomens = {
       title,
       subtitle,
       description,
@@ -30,8 +30,8 @@ const AddForMens = () => {
       alert("Fill to the filds");
       return;
     }
-    createMens(newMens);
-    console.log(newMens);
+    createWomens(newWomens);
+    console.log(newWomens);
   }
 
   return (
@@ -108,4 +108,4 @@ const AddForMens = () => {
   );
 };
 
-export default AddForMens;
+export default AddForWomens;

@@ -13,12 +13,13 @@ import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import MenCard from "../Cards/MenCard";
 import FiltersForMens from "../Filters/FiltersForMens";
 import SearchIcon from "@mui/icons-material/Search";
+import WomenCard from "../Cards/WomenCard";
 
-const Mens = () => {
-  const { getMens, mens } = useContext(clothesContext);
-  console.log(mens);
+const Womens = () => {
+  const { getWomens, womens } = useContext(clothesContext);
+  console.log(womens);
   useEffect(() => {
-    getMens();
+    getWomens();
   }, []);
   return (
     <Box
@@ -74,12 +75,12 @@ const Mens = () => {
           flexFlow: "wrap",
         }}
       >
-        {mens.map((item) => (
-          <MenCard key={item.id} item={item} />
+        {womens.map((item) => (
+          <WomenCard key={item.id} item={item} />
         ))}
       </Box>
     </Box>
   );
 };
 
-export default Mens;
+export default Womens;
