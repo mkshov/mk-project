@@ -103,7 +103,12 @@ const MensDetails = () => {
                 >
                   Delete
                 </Button>
-                <Button variant="outlined">Edit</Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => navigate(`/edit-for-men/${id}`)}
+                >
+                  Edit
+                </Button>
               </div>
             </div>
           </div>

@@ -59,6 +59,9 @@ const ClothesContextProvider = ({ children }) => {
   }
 
   //   Для редактирования
+  async function editMen(id, editedMen) {
+    await axios.patch(`${API}/${id}`, editedMen);
+  }
 
   return (
     <clothesContext.Provider
@@ -69,6 +72,7 @@ const ClothesContextProvider = ({ children }) => {
         getMens,
         getOneMen,
         deleteMen,
+        editMen,
       }}
     >
       {children}
