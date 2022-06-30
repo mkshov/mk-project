@@ -7,6 +7,17 @@
       "price": "139.99",
       "image": "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
       "id": 1
+    },
+    {
+      "title": "Gucci gang",
+      "subtitle": "Not gucci but from dordoi",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid exercitationem ex, nulla laudantium eos voluptate odit officiis quia maiores incidunt reiciendis vel, velit qui excepturi optio dicta ipsam impedit atque quidem tempora blanditiis ut asperiores! Ipsam, tempore facere ipsa quas, reiciendis eligendi sapiente aliquid optio sequi perspiciatis perferendis vero eos, explicabo minima cum provident fuga eius itaque voluptate voluptas omnis. Ducimus sit nulla delectus quibusdam explicabo unde, reprehenderit assumenda? Suscipit labore incidunt architecto reprehenderit ab. Deserunt eligendi tempora odit cupiditate impedit laudantium ad doloribus expedita mollitia cumque quod, provident repellat pariatur, fuga odio dolorum quas soluta saepe aut veniam dolores?",
+      "price": "299.99",
+      "image": "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
+      "smallImg1": "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwa85f8bf1/CH2610_SBH_20.jpg?imwidth=375&impolicy=product",
+      "smallImg2": "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwf4abeb47/CH2610_FYF_20.jpg?imwidth=375&impolicy=product",
+      "smallImg3": "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dw6b6991fa/CH5061_Z81_20.jpg?imwidth=375&impolicy=product",
+      "id": 2
     }
   ]
 }

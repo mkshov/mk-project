@@ -8,7 +8,6 @@ import "../HomePage/HomePage.css";
 import { Box, Button, CardActionArea, IconButton, Rating } from "@mui/material";
 
 const MensDetails = () => {
-  const { getOneMen, oneMen, deleteMen } = useContext(clothesContext);
   const sImg = [
     {
       src: "https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit",
@@ -17,60 +16,54 @@ const MensDetails = () => {
       src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
     },
     {
-      src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
+      src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwa85f8bf1/CH2610_SBH_20.jpg?imwidth=375&impolicy=product",
     },
     {
       src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
     },
   ];
-  const [smallImg, setSmallImg] = useState(sImg);
-  //   console.log(smallImg[1]);
   const navigate = useNavigate();
-  console.log(oneMen);
   const { id } = useParams();
+  const { getOneMen, oneMen, deleteMen } = useContext(clothesContext);
+  const [smallImg, setSmallImg] = useState([]);
+  const [mainImg, setMainImg] = useState("");
   useEffect(() => {
     getOneMen(id);
   }, []);
+  console.log(oneMen);
+  useEffect(() => {
+    if (oneMen) {
+      setMainImg(oneMen.image);
+      setSmallImg([
+        oneMen.image,
+        oneMen.smallImg1,
+        oneMen.smallImg2,
+        oneMen.smallImg3,
+      ]);
+    }
+  }, [oneMen]);
+  console.log(oneMen);
+
+  //   console.log(smallImg[1]);
+
   return (
     <div>
       {oneMen ? (
         <div>
           <div id="prodetails" className="section-p1">
             <div className="single-pro-image">
-              <img src={oneMen.image} width="100%" alt="" id="MainImg" />
+              <img src={mainImg} width="100%" alt="" id="MainImg" />
               <div className="small-image-group">
-                <div className="small-img-col">
-                  <img
-                    src="https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom"
-                    width="100%"
-                    alt=""
-                    className="small-img"
-                  />
-                </div>
-                <div className="small-img-col">
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    width="100%"
-                    alt=""
-                    className="small-img"
-                  />
-                </div>
-                <div className="small-img-col">
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    width="100%"
-                    alt=""
-                    className="small-img"
-                  />
-                </div>
-                <div className="small-img-col">
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    width="100%"
-                    alt=""
-                    className="small-img"
-                  />
-                </div>
+                {smallImg.map((item) => (
+                  <div
+                    key={item}
+                    className="small-img-col"
+                    onClick={() => setMainImg(item)}
+                  >
+                    <img src={item} width="100%" alt="" className="small-img" />
+                  </div>
+                ))}
+                {/* ))} */}
               </div>
             </div>
             <div className="single-pro-details">

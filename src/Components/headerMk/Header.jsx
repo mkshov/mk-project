@@ -149,6 +149,8 @@ export default function Header() {
       <Box
         style={{
           width: "1000px",
+          paddingLeft: "20px",
+          paddingRight: "20px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-around",

@@ -42,25 +42,33 @@ const Sidebar = () => {
           ADD FOR MEN'S
         </li>
         {user ? (
-          <Button>{user.email}</Button>
+          <li>
+            <Button
+              variant="outlined"
+              style={{ borderRadius: "20px" }}
+              onClick={() => {
+                logOut();
+              }}
+            >
+              Log out
+            </Button>
+          </li>
         ) : (
-          <Button
-            onClick={() => {
-              navigate(`/log-in`);
-            }}
-          >
-            Login
-          </Button>
+          <li>
+            <Button
+              variant="outlined"
+              style={{ borderRadius: "20px" }}
+              onClick={() => {
+                {
+                  navigate(`/log-in`);
+                  toggleSidebar();
+                }
+              }}
+            >
+              Log In
+            </Button>
+          </li>
         )}
-        {user ? (
-          <Button
-            onClick={() => {
-              logOut();
-            }}
-          >
-            Log out
-          </Button>
-        ) : null}
       </div>
     </div>
   );

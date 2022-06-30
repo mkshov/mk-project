@@ -11,3 +11,7 @@ header {
   text-align: center;
   display: flex;
 }
+.css-o4b71y-MuiAccordionSummary-content {
+  display: flex;
+  justify-content: center;
+}
