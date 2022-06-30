@@ -6,6 +6,8 @@ import Mens from "./Components/ProductList/Mens";
 import HomePage from "./Components/HomePage/HomePage";
 import MensDetails from "./Components/Details/MensDetails";
 import EditForMen from "./Components/Edit Form/EditForMen";
+import LogIn from "./Components/Auth Froms/LogIn";
+import SignUp from "./Components/Auth Froms/SignUp";
 
 const Routing = () => {
   return (
@@ -19,8 +21,8 @@ const Routing = () => {
       <Route path="/add=for-womens" element={<h1>mens</h1>} />
       <Route path="/cart" element={<h1>privet</h1>} />
       <Route path="/favorite" element={<h1>privet</h1>} />
-      <Route path="/login" element={<h1>privet</h1>} />
-      <Route path="/register" element={<h1>privet</h1>} />
+      <Route path="/log-in" element={<LogIn />} />
+      <Route path="/sign-up" element={<SignUp />} />
     </Routes>
   );
 };

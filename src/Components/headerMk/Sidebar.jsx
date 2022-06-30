@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import { headerContext } from "../../contexts/headerContext";
 import { useNavigate } from "react-router-dom";
+import { authContext } from "../../contexts/authContext";
+import { Button } from "@mui/material";
 
 const Sidebar = () => {
+  const { user, logOut } = useContext(authContext);
   const { sidebar, toggleSidebar } = useContext(headerContext);
   const navigate = useNavigate();
   return (
@@ -38,6 +41,26 @@ const Sidebar = () => {
         >
           ADD FOR MEN'S
         </li>
+        {user ? (
+          <Button>{user.email}</Button>
+        ) : (
+          <Button
+            onClick={() => {
+              navigate(`/log-in`);
+            }}
+          >
+            Login
+          </Button>
+        )}
+        {user ? (
+          <Button
+            onClick={() => {
+              logOut();
+            }}
+          >
+            Log out
+          </Button>
+        ) : null}
       </div>
     </div>
   );
