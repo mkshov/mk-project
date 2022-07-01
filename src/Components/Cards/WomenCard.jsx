@@ -1,16 +1,17 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import React, { useContext, useState } from "react";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import BookmarkAddSharpIcon from "@mui/icons-material/BookmarkAddSharp";
+import BookmarkRemoveSharpIcon from "@mui/icons-material/BookmarkRemoveSharp";
 import "./Cards.css";
 import { CardActionArea, IconButton, Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { cartContext } from "../../contexts/cartContext";
 
 export default function WomenCard({ item }) {
   const navigate = useNavigate();
+  const { addProductToCart, checkProductInCart } = useContext(cartContext);
+  const [checkProduct, setCheckProduct] = useState(checkProductInCart(item));
   return (
     <div id="product" className="section-p">
       <div className="pro-container">
@@ -34,8 +35,19 @@ export default function WomenCard({ item }) {
           <IconButton className="cart">
             <ShoppingCartIcon />
           </IconButton>
-          <IconButton className="cart" style={{ marginRight: "35px" }}>
-            <FavoriteIcon />
+          <IconButton
+            onClick={() => {
+              addProductToCart(item);
+              setCheckProduct(checkProductInCart(item));
+            }}
+            className="cart"
+            style={{ marginRight: "35px" }}
+          >
+            {checkProduct ? (
+              <BookmarkRemoveSharpIcon />
+            ) : (
+              <BookmarkAddSharpIcon />
+            )}
           </IconButton>
         </div>
       </div>

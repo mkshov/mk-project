@@ -10,6 +10,10 @@ const API2 = "http://localhost:8000/womens";
 const INIT_STATE = {
   mens: [],
   womens: [],
+  oneMen: null,
+  oneWomen: null,
+  mensPages: 0,
+  womensPages: 0,
 };
 
 function reducer(state = INIT_STATE, action) {
@@ -18,6 +22,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         mens: action.payload.data,
+        mensPages: Math.ceil(action.payload.headers["x-total-count"] / 5),
       };
     case "GET_ONE_MEN":
       return {
@@ -28,6 +33,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         womens: action.payload.data,
+        womensPages: Math.ceil(action.payload.headers["x-total-count"] / 5),
       };
     case "GET_ONE_WOMEN":
       return {
@@ -51,14 +57,14 @@ const ClothesContextProvider = ({ children }) => {
 
   //   Для получения
   async function getMens() {
-    let res = await axios(`${API}`);
+    let res = await axios(`${API}/${window.location.search}`);
     dispatch({
       type: "GET_MENS",
       payload: res,
     });
   }
   async function getWomens() {
-    let res = await axios(`${API2}`);
+    let res = await axios(`${API2}/${window.location.search}`);
     dispatch({
       type: "GET_WOMENS",
       payload: res,
@@ -106,6 +112,8 @@ const ClothesContextProvider = ({ children }) => {
         oneMen: state.oneMen,
         womens: state.womens,
         oneWomen: state.oneWomen,
+        mensPages: state.mensPages,
+        womensPages: state.womensPages,
         createMens,
         getMens,
         getOneMen,

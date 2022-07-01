@@ -85,9 +85,12 @@ body {
   border-bottom: solid rgba(40, 40, 40, 0.1) 1px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
   font-weight: 300;
+}
+.auth {
+  justify-content: center !important;
 }
 
 .sidebar li:hover {

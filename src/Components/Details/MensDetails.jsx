@@ -8,20 +8,6 @@ import "../HomePage/HomePage.css";
 import { Box, Button, CardActionArea, IconButton, Rating } from "@mui/material";
 
 const MensDetails = () => {
-  const sImg = [
-    {
-      src: "https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit",
-    },
-    {
-      src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
-    },
-    {
-      src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwa85f8bf1/CH2610_SBH_20.jpg?imwidth=375&impolicy=product",
-    },
-    {
-      src: "https://image1.lacoste.com/dw/image/v2/AAQM_PRD/on/demandware.static/Sites-INT-Site/Sites-master/en/dwda954204/CH5163_WTW_24.jpg?imwidth=1920&impolicy=zoom",
-    },
-  ];
   const navigate = useNavigate();
   const { id } = useParams();
   const { getOneMen, oneMen, deleteMen } = useContext(clothesContext);

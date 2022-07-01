@@ -84,20 +84,6 @@ const HomePage = () => {
         <div className="pro-container">
           <div className="pro">
             <CardActionArea style={{ borderRadius: "25px" }}>
-              <img src={g1} alt="" />
-            </CardActionArea>
-            <div className="des">
-              <span className="sp">adidas</span>
-              <h5>Cartoon Astronaut T-Shirts</h5>
-              <div className="star">
-                <Rating name="size-medium" defaultValue={2} />
-              </div>
-              <h4>$78</h4>
-            </div>
-            <ShoppingCartIcon className="cart" />
-          </div>
-          <div className="pro">
-            <CardActionArea style={{ borderRadius: "25px" }}>
               <img src={g2} alt="" />
             </CardActionArea>
             <div className="des">
@@ -314,34 +300,6 @@ const HomePage = () => {
           <div className="pro">
             <CardActionArea style={{ borderRadius: "25px" }}>
               <img src={g5} alt="" />
-            </CardActionArea>
-            <div className="des">
-              <span className="sp">adidas</span>
-              <h5>Cartoon Astronaut T-Shirts</h5>
-              <div className="star">
-                <Rating name="size-medium" defaultValue={2} />
-              </div>
-              <h4>$78</h4>
-            </div>
-            <ShoppingCartIcon className="cart" />
-          </div>
-          <div className="pro">
-            <CardActionArea style={{ borderRadius: "25px" }}>
-              <img src={g6} alt="" />
-            </CardActionArea>
-            <div className="des">
-              <span className="sp">adidas</span>
-              <h5>Cartoon Astronaut T-Shirts</h5>
-              <div className="star">
-                <Rating name="size-medium" defaultValue={2} />
-              </div>
-              <h4>$78</h4>
-            </div>
-            <ShoppingCartIcon className="cart" />
-          </div>
-          <div className="pro">
-            <CardActionArea style={{ borderRadius: "25px" }}>
-              <img src={g7} alt="" />
             </CardActionArea>
             <div className="des">
               <span className="sp">adidas</span>

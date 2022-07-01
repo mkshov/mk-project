@@ -7,12 +7,12 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-export default function FiltersForMens() {
-  const [value, setValue] = React.useState([20, 37]);
+export default function FiltersForMens({ search, setSearch, price, setPrice }) {
+  //   const [value, setValue] = React.useState([20, 37]);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  //   const handleChange = (event, newValue) => {
+  //     setValue(newValue);
+  //   };
 
   return (
     <div style={{ height: "17vh" }}>
@@ -22,8 +22,10 @@ export default function FiltersForMens() {
           className="large-slider"
           style={{ color: "#767e85" }}
           getAriaLabel={() => "Temperature range"}
-          value={value}
-          onChange={handleChange}
+          value={price}
+          onChange={(e, value) => setPrice(value)}
+          min={0}
+          max={5000}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
         />
@@ -32,8 +34,10 @@ export default function FiltersForMens() {
           size="small"
           style={{ color: "#767e85" }}
           getAriaLabel={() => "Temperature range"}
-          value={value}
-          onChange={handleChange}
+          value={price}
+          onChange={(e, value) => setPrice(value)}
+          min={0}
+          max={5000}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
         />
@@ -49,10 +53,11 @@ export default function FiltersForMens() {
       >
         <div className="search-box">
           <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             className="search-input"
             type="text"
-            name=""
-            placeholder="Pesquise"
+            placeholder="Search"
           />
           <div className="search-btn">
             <SearchIcon />

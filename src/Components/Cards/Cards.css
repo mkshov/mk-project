@@ -9,6 +9,7 @@
   flex-wrap: wrap;
 }
 #product .pro {
+  background-color: #ffffffc4;
   width: 200px;
   min-height: 250px;
   padding: 10px 12px;

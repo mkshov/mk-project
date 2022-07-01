@@ -7,13 +7,12 @@ function valuetext(value) {
   return `${value}°C`;
 }
 
-export default function FiltersForWomens() {
-  const [value, setValue] = React.useState([20, 37]);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
+export default function FiltersForWomens({
+  search,
+  setSearch,
+  price,
+  setPrice,
+}) {
   return (
     <div style={{ height: "17vh" }}>
       <Box>
@@ -22,8 +21,10 @@ export default function FiltersForWomens() {
           className="large-slider"
           style={{ color: "#767e85" }}
           getAriaLabel={() => "Temperature range"}
-          value={value}
-          onChange={handleChange}
+          value={price}
+          onChange={(e, value) => setPrice(value)}
+          min={0}
+          max={5000}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
         />
@@ -32,8 +33,10 @@ export default function FiltersForWomens() {
           size="small"
           style={{ color: "#767e85" }}
           getAriaLabel={() => "Temperature range"}
-          value={value}
-          onChange={handleChange}
+          value={price}
+          onChange={(e, value) => setPrice(value)}
+          min={0}
+          max={5000}
           valueLabelDisplay="auto"
           getAriaValueText={valuetext}
         />
@@ -49,10 +52,11 @@ export default function FiltersForWomens() {
       >
         <div className="search-box">
           <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             className="search-input"
             type="text"
-            name=""
-            placeholder="Pesquise"
+            placeholder="Search"
           />
           <div className="search-btn">
             <SearchIcon />

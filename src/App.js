@@ -9,30 +9,33 @@ import "./App.css";
 import HeaderContextProvider from "./contexts/headerContext";
 import ClothesContextProvider from "./contexts/clothesContext";
 import AuthContextProvider from "./contexts/authContext";
+import CartContextProvider from "./contexts/cartContext";
 
 function App() {
   return (
-    <AuthContextProvider>
-      <ClothesContextProvider>
-        <HeaderContextProvider>
-          <BrowserRouter>
-            <Container
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-                flexFlow: "wrap",
-              }}
-            >
-              <Header />
-            </Container>
-            <Sidebar />
-            <BackDrop />
-            <Routing />
-          </BrowserRouter>
-        </HeaderContextProvider>
-      </ClothesContextProvider>
-    </AuthContextProvider>
+    <BrowserRouter>
+      <AuthContextProvider>
+        <CartContextProvider>
+          <ClothesContextProvider>
+            <HeaderContextProvider>
+              <Container
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  flexFlow: "wrap",
+                }}
+              >
+                <Header />
+              </Container>
+              <Sidebar />
+              <BackDrop />
+              <Routing />
+            </HeaderContextProvider>
+          </ClothesContextProvider>
+        </CartContextProvider>
+      </AuthContextProvider>
+    </BrowserRouter>
   );
 }
 

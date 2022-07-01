@@ -3,9 +3,9 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { clothesContext } from "../../contexts/clothesContext";
 
-const AddForWomens = () => {
+const AddForMens = () => {
   const navigate = useNavigate();
-  const { createWomens } = useContext(clothesContext);
+  const { createMens } = useContext(clothesContext);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [image, setImage] = useState("");
@@ -16,7 +16,7 @@ const AddForWomens = () => {
   const [price, setPrice] = useState("");
 
   function handleSave() {
-    let newWomens = {
+    let newMens = {
       title,
       subtitle,
       description,
@@ -30,8 +30,7 @@ const AddForWomens = () => {
       alert("Fill to the filds");
       return;
     }
-    createWomens(newWomens);
-    console.log(newWomens);
+    createMens(newMens);
   }
 
   return (
@@ -57,7 +56,7 @@ const AddForWomens = () => {
             style={{ marginTop: "15px" }}
             value={image}
             onChange={(e) => setImage(e.target.value)}
-            label="For Image"
+            label="Large Image"
             variant="outlined"
           />
           <TextField
@@ -91,7 +90,8 @@ const AddForWomens = () => {
           <TextField
             style={{ marginTop: "15px" }}
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
+            type="number"
+            onChange={(e) => setPrice(+e.target.value)}
             label="Price"
             variant="outlined"
           />
@@ -108,4 +108,4 @@ const AddForWomens = () => {
   );
 };
 
-export default AddForWomens;
+export default AddForMens;

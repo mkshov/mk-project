@@ -4,6 +4,7 @@ import { headerContext } from "../../contexts/headerContext";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/authContext";
 import { Button } from "@mui/material";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Sidebar = () => {
   const { user, logOut } = useContext(authContext);
@@ -12,9 +13,13 @@ const Sidebar = () => {
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
       <div className="sidebar-container">
-        <li onClick={() => toggleSidebar()}>
-          <HomeRoundedIcon />
-          HOME
+        <li
+          onClick={() => {
+            toggleSidebar();
+            navigate(`/`);
+          }}
+        >
+          HOME <ArrowForwardIosIcon />
         </li>
         <li
           onClick={() => {
@@ -22,7 +27,7 @@ const Sidebar = () => {
             navigate(`/mens`);
           }}
         >
-          MENS
+          MENS <ArrowForwardIosIcon />
         </li>
         <li
           onClick={() => {
@@ -30,22 +35,37 @@ const Sidebar = () => {
             navigate(`/womens`);
           }}
         >
-          WOMANS
+          WOMANS <ArrowForwardIosIcon />
         </li>
-        <li onClick={() => toggleSidebar()}>CART</li>
+        <li onClick={() => toggleSidebar()}>
+          CART
+          <ArrowForwardIosIcon />
+        </li>
         <li
           onClick={() => {
             toggleSidebar();
             navigate(`/add-for-mens`);
           }}
         >
-          ADD FOR MEN'S
+          ADD FOR MEN'S <ArrowForwardIosIcon />
+        </li>
+        <li
+          onClick={() => {
+            toggleSidebar();
+            navigate(`/add-for-womens`);
+          }}
+        >
+          ADD FOR WOMEN'S <ArrowForwardIosIcon />
         </li>
         {user ? (
-          <li>
+          <li className="auth">
             <Button
               variant="outlined"
-              style={{ borderRadius: "20px" }}
+              style={{
+                borderRadius: "20px",
+                color: "black",
+                border: "1px solid black",
+              }}
               onClick={() => {
                 logOut();
               }}
@@ -54,10 +74,14 @@ const Sidebar = () => {
             </Button>
           </li>
         ) : (
-          <li>
+          <li className="auth">
             <Button
               variant="outlined"
-              style={{ borderRadius: "20px" }}
+              style={{
+                borderRadius: "20px",
+                color: "black",
+                border: "1px solid black",
+              }}
               onClick={() => {
                 {
                   navigate(`/log-in`);
