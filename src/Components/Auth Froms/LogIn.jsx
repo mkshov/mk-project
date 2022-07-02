@@ -3,6 +3,11 @@ import {
   Box,
   Button,
   Container,
+  FormControl,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
   TableContainer,
   TextField,
   Typography,
@@ -10,6 +15,11 @@ import {
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/authContext";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import Visibility from "@mui/icons-material/Visibility";
+import GoogleIcon from "@mui/icons-material/Google";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import KeyIcon from "@mui/icons-material/Key";
 // import "./LoginForm.css";
 
 const LogIn = () => {
@@ -19,61 +29,131 @@ const LogIn = () => {
   const [password, setPassword] = useState("");
 
   function handleSave(e) {
-    e.preventDefault();
     if (!email || !password) {
       alert("Заполните поля!");
       return;
     }
+    e.preventDefault(e);
+
     signIn(email, password, navigate);
   }
+  const [values, setValues] = React.useState({
+    amount: "",
+    password: "",
+    weight: "",
+    weightRange: "",
+    showPassword: false,
+  });
+  const handleChange = (prop) => (event) => {
+    setValues({ ...values, [prop]: event.target.value });
+  };
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
 
   return (
     <>
-      <div style={{ marginTop: "200px" }}>
-        <Container maxWidth="sm">
-          <Box style={{ display: "flex", flexDirection: "column" }}>
-            <Typography variant="h5">Login from</Typography>
-            <TextField
-              style={{ marginTop: "15px" }}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              label="Title"
-              variant="outlined"
-            />
-            <TextField
-              style={{ marginTop: "15px" }}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              label="Subtitle"
-              variant="outlined"
-            />
-            {error ? (
-              <Alert style={{ marginTop: "10px" }} severity="error">
-                The email or password was entered incorrectly.{" "}
-                <a
-                  onClick={() => navigate(`/sign-up`)}
+      <div className="back-img">
+        <div className="backOpasity">
+          <div className="container">
+            <div className="container-img"></div>
+            <div className="inputs-container">
+              <div className="inputs-box">
+                <Typography variant="h2">Hello!</Typography>
+                <p>To enter, fill in the fields below</p>
+                <div
                   style={{
-                    color: "#1674ff",
-                    cursor: "pointer",
-                    textDecoration: "underline",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginTop: "40px",
                   }}
-                  className="register"
                 >
-                  Register
-                </a>{" "}
-                or try again.
-              </Alert>
-            ) : null}
-
-            <Button
-              onClick={handleSave}
-              style={{ marginTop: "15px" }}
-              variant="contained"
-            >
-              Save
-            </Button>
-          </Box>
-        </Container>
+                  <AlternateEmailIcon />
+                  <TextField
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    style={{ width: "90%" }}
+                    label="Email"
+                    variant="outlined"
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginTop: "20px",
+                  }}
+                >
+                  <KeyIcon />
+                  <FormControl sx={{ width: "90%" }} variant="outlined">
+                    <InputLabel htmlFor="outlined-adornment-password">
+                      Password
+                    </InputLabel>
+                    <OutlinedInput
+                      id="outlined-adornment-password"
+                      type={values.showPassword ? "text" : "password"}
+                      value={password}
+                      onChange={(e) => {
+                        handleChange("password");
+                        setPassword(e.target.value);
+                      }}
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                            edge="end"
+                          >
+                            {values.showPassword ? (
+                              <VisibilityOff />
+                            ) : (
+                              <Visibility />
+                            )}
+                          </IconButton>
+                        </InputAdornment>
+                      }
+                      label="Password"
+                    />
+                  </FormControl>
+                  {/* <AlternateEmailIcon />
+                    <TextField
+                      style={{ width: "90%" }}
+                      label="Password"
+                      variant="outlined" */}
+                </div>
+                <Button
+                  onClick={(e) => handleSave(e)}
+                  variant="contained"
+                  style={{ marginTop: "30px" }}
+                >
+                  Sign In
+                </Button>
+                <Button
+                  variant="contained"
+                  style={{
+                    marginTop: "10px",
+                    backgroundColor: "white",
+                    color: "black",
+                  }}
+                >
+                  Sign In with &nbsp;
+                  <GoogleIcon style={{ color: "#de3b2b" }} /> oogle
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

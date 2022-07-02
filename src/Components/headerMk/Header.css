@@ -91,6 +91,7 @@ body {
 }
 .auth {
   justify-content: center !important;
+  background-color: white !important;
 }
 
 .sidebar li:hover {
@@ -131,6 +132,11 @@ body {
   }
   .sidebar {
     width: 50%;
+  }
+}
+@media all and (max-width: 540px) {
+  .auth {
+    flex-direction: column !important;
   }
 }
 @media all and (max-width: 450px) {

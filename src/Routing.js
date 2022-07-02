@@ -1,17 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
-import Mens from "./Components/ProductList/Mens";
 import HomePage from "./Components/HomePage/HomePage";
 import MensDetails from "./Components/Details/MensDetails";
 import EditForMen from "./Components/Edit Form/EditForMen";
 import LogIn from "./Components/Auth Froms/LogIn";
 import SignUp from "./Components/Auth Froms/SignUp";
-import Womens from "./Components/ProductList/Womens";
 import AddForWomens from "./Components/Add Form/AddForWomens";
 import EditForWomen from "./Components/Edit Form/EditForWomen";
 import WomensDetails from "./Components/Details/WomensDetails";
 import AddForMens from "./Components/Add Form/AddForMens";
+import Mens from "./Components/ProductLists/Mens";
+import Womens from "./Components/ProductLists/Womens";
 
 const Routing = () => {
   return (

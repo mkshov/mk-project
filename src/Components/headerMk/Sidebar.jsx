@@ -3,7 +3,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import { headerContext } from "../../contexts/headerContext";
 import { useNavigate } from "react-router-dom";
 import { authContext } from "../../contexts/authContext";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Sidebar = () => {
@@ -90,6 +90,21 @@ const Sidebar = () => {
               }}
             >
               Log In
+            </Button>
+            <Typography>or</Typography>
+            <Button
+              onClick={() => {
+                navigate(`/sign-up`);
+                toggleSidebar();
+              }}
+              variant="outlined"
+              style={{
+                borderRadius: "20px",
+                color: "green",
+                border: "1px solid green",
+              }}
+            >
+              Sign Up
             </Button>
           </li>
         )}

@@ -55,7 +55,6 @@ const Mens = () => {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
-        backgroundImage: 'url("https://i.gifer.com/XQ52.gif")',
       }}
     >
       <section id="page-header">
@@ -65,8 +64,6 @@ const Mens = () => {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Accordion
           style={{
-            backgroundColor: "#18181857",
-            color: "white",
             width: "40%",
             borderBottomLeftRadius: "20px",
             borderBottomRightRadius: "20px",

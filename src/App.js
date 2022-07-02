@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routing from "./Routing";
 import Header from "./Components/headerMk/Header";
@@ -9,9 +9,10 @@ import "./App.css";
 import HeaderContextProvider from "./contexts/headerContext";
 import ClothesContextProvider from "./contexts/clothesContext";
 import AuthContextProvider from "./contexts/authContext";
-import CartContextProvider from "./contexts/cartContext";
+import CartContextProvider, { cartContext } from "./contexts/cartContext";
+import SpeedDialMen from "./Components/SpeedDial/SpeedDial";
 
-function App() {
+function App({ item }) {
   return (
     <BrowserRouter>
       <AuthContextProvider>

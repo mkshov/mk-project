@@ -3,14 +3,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import { clothesContext } from "../../contexts/clothesContext";
 import CircularProgress from "@mui/material/CircularProgress";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import RemoveShoppingCartSharpIcon from "@mui/icons-material/RemoveShoppingCartSharp";
 import "../HomePage/HomePage.css";
 
 import { Box, Button, CardActionArea, IconButton, Rating } from "@mui/material";
+import { cartContext } from "../../contexts/cartContext";
 
 const MensDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { getOneMen, oneMen, deleteMen } = useContext(clothesContext);
+  const { addProductToCart, checkProductInCart } = useContext(cartContext);
+  const [checkProduct, setCheckProduct] = useState(false);
   const [smallImg, setSmallImg] = useState([]);
   const [mainImg, setMainImg] = useState("");
   useEffect(() => {
@@ -19,6 +23,7 @@ const MensDetails = () => {
   console.log(oneMen);
   useEffect(() => {
     if (oneMen) {
+      setCheckProduct(checkProductInCart(oneMen));
       setMainImg(oneMen.image);
       setSmallImg([
         oneMen.image,
@@ -63,8 +68,17 @@ const MensDetails = () => {
                   <option>XL</option>
                   <option>XXL</option>
                 </select>
-                <IconButton>
-                  <ShoppingCartIcon />
+                <IconButton
+                  onClick={() => {
+                    addProductToCart(oneMen);
+                    setCheckProduct(checkProductInCart(oneMen));
+                  }}
+                >
+                  {checkProduct ? (
+                    <RemoveShoppingCartSharpIcon />
+                  ) : (
+                    <ShoppingCartIcon />
+                  )}
                 </IconButton>
               </div>
               <h4>Products Details</h4>
