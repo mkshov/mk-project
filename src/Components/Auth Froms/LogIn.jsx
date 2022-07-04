@@ -61,10 +61,10 @@ const LogIn = () => {
 
   return (
     <>
-      <div className="back-img">
-        <div className="backOpasity">
+      <div className="back-img2">
+        <div className="backOpasity2">
           <div className="container">
-            <div className="container-img"></div>
+            <div className="container-img2"></div>
             <div className="inputs-container">
               <div className="inputs-box">
                 <Typography variant="h2">Hello!</Typography>
@@ -150,6 +150,22 @@ const LogIn = () => {
                   Sign In with &nbsp;
                   <GoogleIcon style={{ color: "#de3b2b" }} /> oogle
                 </Button>
+                <div>
+                  <p>
+                    If you don’t have an account, &nbsp;
+                    <span
+                      style={{
+                        color: "blue",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => navigate(`/sign-up`)}
+                    >
+                      register
+                    </span>
+                    .
+                  </p>
+                </div>
               </div>
             </div>
           </div>

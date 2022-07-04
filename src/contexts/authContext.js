@@ -13,7 +13,7 @@ const AuthContextProvider = ({ children }) => {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => navigate("/log-in"))
+      .then(() => navigate("/signup-success"))
       .catch((error) => setError(error.message));
   }
 
@@ -25,6 +25,21 @@ const AuthContextProvider = ({ children }) => {
       .then(() => navigate("/mens"))
       .catch((error) => setError(error.message));
   }
+
+  //   function signInWithGoogle() {
+  //     signInWithPopup(auth, provider)
+  //       .then((res) => {
+  //         const name = res.user.displayName;
+  //         const email = res.user.email;
+  //         const photo = res.user.photoUrl;
+  //         localStorage.setItem("name", name);
+  //         localStorage.setItem("email", email);
+  //         localStorage.setItem("photo", photo);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }
 
   // для выхода
   function logOut() {

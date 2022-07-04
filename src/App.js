@@ -11,29 +11,34 @@ import ClothesContextProvider from "./contexts/clothesContext";
 import AuthContextProvider from "./contexts/authContext";
 import CartContextProvider, { cartContext } from "./contexts/cartContext";
 import SpeedDialMen from "./Components/SpeedDial/SpeedDial";
+import CommentsContextProvider from "./contexts/commentsContext";
+import Footer from "./Components/Footer/Footer";
 
-function App({ item }) {
+function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
         <CartContextProvider>
-          <ClothesContextProvider>
-            <HeaderContextProvider>
-              <Container
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                  flexFlow: "wrap",
-                }}
-              >
-                <Header />
-              </Container>
-              <Sidebar />
-              <BackDrop />
-              <Routing />
-            </HeaderContextProvider>
-          </ClothesContextProvider>
+          <CommentsContextProvider>
+            <ClothesContextProvider>
+              <HeaderContextProvider>
+                <Container
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    flexFlow: "wrap",
+                  }}
+                >
+                  <Header />
+                </Container>
+                <Sidebar />
+                <BackDrop />
+                <Routing />
+                <Footer />
+              </HeaderContextProvider>
+            </ClothesContextProvider>
+          </CommentsContextProvider>
         </CartContextProvider>
       </AuthContextProvider>
     </BrowserRouter>

@@ -2,12 +2,24 @@
   background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/24479a67602365.5b3f543b3291c.jpg);
   background-size: cover;
 }
+.back-img2 {
+  background-image: url(https://i.pinimg.com/originals/33/36/77/333677684140cea5074c069452e4a1e5.gif);
+  background-size: cover;
+}
 .backOpasity {
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100vh;
   background-color: #00000036;
+  overflow: hidden;
+}
+.backOpasity2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000bf;
 }
 .container {
   display: flex;
@@ -24,6 +36,15 @@
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
 }
+.container-img2 {
+  width: 40%;
+  background-position: top;
+  background-image: url(https://digitalsynopsis.com/wp-content/uploads/2019/08/beautiful-illustrations-design-inspiration-22.png);
+  background-size: cover;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
 .inputs-container {
   background-color: white;
   width: 50%;
@@ -51,5 +72,20 @@
 @media all and (max-width: 1000px) {
   .container {
     width: 90%;
+  }
+}
+@media all and (max-width: 700px) {
+  .container-img2 {
+    display: none;
+  }
+  .container-img {
+    display: none;
+  }
+  .inputs-container {
+    margin-top: 130px;
+    width: 500px;
+    height: 500px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
   }
 }

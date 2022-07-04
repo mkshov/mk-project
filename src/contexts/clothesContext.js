@@ -22,7 +22,7 @@ function reducer(state = INIT_STATE, action) {
       return {
         ...state,
         mens: action.payload.data,
-        mensPages: Math.ceil(action.payload.headers["x-total-count"] / 5),
+        mensPages: Math.ceil(action.payload.headers["x-total-count"] / 15),
       };
     case "GET_ONE_MEN":
       return {

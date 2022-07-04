@@ -59,7 +59,7 @@ const Womens = () => {
         flexDirection: "column",
         backgroundColor: "antiquewhite",
         backgroundImage:
-          'url("https://img1.liveinternet.ru/images/attach/c/6/124/470/124470703_50.gif")',
+          'url("https://static.collectui.com/shots/2666136/daily-ui-059-background-pattern-large")',
       }}
     >
       <section id="page-header2">

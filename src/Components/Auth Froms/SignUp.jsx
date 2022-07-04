@@ -95,9 +95,8 @@ const SignUp = () => {
             <div className="inputs-container">
               <div className="inputs-box">
                 <Typography variant="h2">Hello!</Typography>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Ea,quasi
+                <p style={{ marginBottom: "20px" }}>
+                  Lorem ipsum dolor sit amet consectetur
                 </p>
                 <div
                   style={{
@@ -216,9 +215,25 @@ const SignUp = () => {
                     color: "black",
                   }}
                 >
-                  Sign Up with &nbsp;{" "}
+                  Sign Up with &nbsp;
                   <GoogleIcon style={{ color: "#de3b2b" }} /> oogle
                 </Button>
+                <div>
+                  <p>
+                    If you already have an account,&nbsp;
+                    <span
+                      style={{
+                        color: "blue",
+                        textDecoration: "underline",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => navigate(`/log-in`)}
+                    >
+                      log in
+                    </span>
+                    .
+                  </p>
+                </div>
               </div>
             </div>
           </div>

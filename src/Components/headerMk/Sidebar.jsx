@@ -44,6 +44,15 @@ const Sidebar = () => {
         <li
           onClick={() => {
             toggleSidebar();
+            navigate(`/about-us`);
+          }}
+        >
+          ABOUT US
+          <ArrowForwardIosIcon />
+        </li>
+        <li
+          onClick={() => {
+            toggleSidebar();
             navigate(`/add-for-mens`);
           }}
         >
@@ -65,6 +74,7 @@ const Sidebar = () => {
                 borderRadius: "20px",
                 color: "black",
                 border: "1px solid black",
+                fontWeight: "600",
               }}
               onClick={() => {
                 logOut();
@@ -81,6 +91,7 @@ const Sidebar = () => {
                 borderRadius: "20px",
                 color: "black",
                 border: "1px solid black",
+                fontWeight: "600",
               }}
               onClick={() => {
                 {
@@ -102,6 +113,7 @@ const Sidebar = () => {
                 borderRadius: "20px",
                 color: "green",
                 border: "1px solid green",
+                fontWeight: "600",
               }}
             >
               Sign Up

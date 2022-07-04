@@ -8,6 +8,7 @@ import "../HomePage/HomePage.css";
 
 import { Box, Button, CardActionArea, IconButton, Rating } from "@mui/material";
 import { cartContext } from "../../contexts/cartContext";
+import Loading from "./Loading";
 
 const MensDetails = () => {
   const navigate = useNavigate();
@@ -181,7 +182,7 @@ const MensDetails = () => {
           </section>
         </div>
       ) : (
-        <CircularProgress />
+        <Loading />
       )}
     </div>
   );

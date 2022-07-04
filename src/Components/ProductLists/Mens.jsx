@@ -16,6 +16,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useSearchParams } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import { Parallax } from "react-parallax";
+import b1 from "../IMGS/banner/b1.jpg";
 
 const Mens = () => {
   const { getMens, mens, mensPages } = useContext(clothesContext);
@@ -32,7 +34,7 @@ const Mens = () => {
       price_gte: price[0],
       price_lte: price[1],
       _page: page,
-      _limit: 5,
+      _limit: 15,
     });
   }, []);
   useEffect(() => {
@@ -41,7 +43,7 @@ const Mens = () => {
       price_gte: price[0],
       price_lte: price[1],
       _page: page,
-      _limit: 5,
+      _limit: 15,
     });
   }, [search, price, page]);
   // console.log(mensPages);
@@ -55,12 +57,16 @@ const Mens = () => {
         display: "flex",
         justifyContent: "center",
         flexDirection: "column",
+        backgroundImage:
+          "url(https://static.collectui.com/shots/2666136/daily-ui-059-background-pattern-large)",
       }}
     >
-      <section id="page-header">
-        <h2>#formakers</h2>
-        <p>Save more with coupons $ up to 70% off!</p>
-      </section>
+      <Parallax bgImage={b1} strength={-110}>
+        <section id="page-header">
+          <h2>#formakers</h2>
+          <p>Save more with coupons $ up to 70% off!</p>
+        </section>
+      </Parallax>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Accordion
           style={{

@@ -26,6 +26,10 @@ import g8 from "./img/products/f8.jpg";
 import g9 from "./img/products/n1.jpg";
 import g10 from "./img/products/n2.jpg";
 import g11 from "./img/products/n3.jpg";
+import banner1 from "./img/hero4.png";
+import banner2 from "./img/b2.jpg";
+
+import { Parallax } from "react-parallax";
 
 const HomePage = () => {
   useEffect(() => {
@@ -35,15 +39,22 @@ const HomePage = () => {
   return (
     <>
       {/* First block */}
-      <section id="hero">
-        <div className="hero-text">
-          <h4>Trade-in-offer</h4>
-          <h2>Super value deals</h2>
-          <h1 id="h-color">On all products</h1>
-          <p id="p-h-color">Save more with coupons & up to 70% off!</p>
-          <Button variant="outlined">Shop Now</Button>
-        </div>
-      </section>
+      <Parallax
+        style={{ width: "100%" }}
+        bgImage="https://images7.alphacoders.com/617/617537.jpg"
+        strength={-400}
+      >
+        <section id="hero">
+          <div className="hero-text">
+            <h4>Trade-in-offer</h4>
+            <h2>Super value deals</h2>
+            <h1 id="h-color">On all products</h1>
+            <p id="p-h-color">Save more with coupons & up to 70% off!</p>
+            <Button variant="outlined">Shop Now</Button>
+          </div>
+        </section>
+      </Parallax>
+
       {/* First block end */}
       {/* -------------------------------------------- */}
       <section
@@ -156,15 +167,21 @@ const HomePage = () => {
       </section>
       {/* ----------------------------------------------------------- */}
 
-      <section id="banner" className="section-m1">
-        <h4>Repair Services</h4>
-        <h2>
-          Up to <span>70% Off</span> - All t-Shirts & Accessories
-        </h2>
-        <Button data-aos="flip-up" variant="outlined" color="inherit">
-          Explore More
-        </Button>
-      </section>
+      <Parallax
+        style={{ height: "40vh" }}
+        bgImage="https://wallpaperaccess.com/full/2825704.gif"
+        strength={400}
+      >
+        <section id="banner" className="section-m1">
+          <h4>Repair Services</h4>
+          <h2>
+            Up to <span>70% Off</span> - All t-Shirts & Accessories
+          </h2>
+          <Button data-aos="flip-up" variant="outlined" color="inherit">
+            Explore More
+          </Button>
+        </section>
+      </Parallax>
       {/* ----------------------- */}
 
       <section id="product1" className="section-p1" data-aos="flip-right">

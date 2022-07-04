@@ -1,10 +1,10 @@
 #hero {
   height: 100vh;
 
-  background-image: url("./img/hero4.png");
+  /* background-image: url("./img/hero4.png"); */
 
   background-size: cover;
-  background-color: #e3e6f3;
+  /* background-color: #e3e6f3; */
   background-repeat: no-repeat;
   background-position: top -10% right 0;
   display: flex;
@@ -14,6 +14,7 @@
 }
 .hero-text {
   margin-left: 100px;
+  color: white;
 }
 #hero .hero-text h4 {
   font-size: 30px;
@@ -24,15 +25,16 @@
 }
 #h-color {
   font-size: 45px;
+  color: black;
 }
 #p-h-color {
-  color: rgb(147, 147, 147);
+  color: rgb(228, 228, 228);
   margin-bottom: 15px;
 }
 #hero button {
   border-radius: 20px;
-  color: black;
-  border: 1px solid black;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
 }
 
 /* .section-p1 {
@@ -158,11 +160,13 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-image: url("./img/b2.jpg");
+  margin-top: 100px;
+
+  /* background-image: url("./img/b2.jpg");
   width: 100%;
   height: 40vh;
   background-size: cover;
-  background-position: center;
+  background-position: center; */
 }
 #banner h4 {
   color: #fff;
@@ -188,7 +192,7 @@
 
 /* Mens page header */
 #page-header {
-  background-image: url("../IMGS/banner/b1.jpg");
+  /* background-image: url("../IMGS/banner/b1.jpg"); */
   width: 100%;
   height: 40vh;
   background-size: cover;

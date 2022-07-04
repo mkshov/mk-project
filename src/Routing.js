@@ -1,6 +1,5 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./Components/Footer/Footer";
 import HomePage from "./Components/HomePage/HomePage";
 import MensDetails from "./Components/Details/MensDetails";
 import EditForMen from "./Components/Edit Form/EditForMen";
@@ -12,6 +11,9 @@ import WomensDetails from "./Components/Details/WomensDetails";
 import AddForMens from "./Components/Add Form/AddForMens";
 import Mens from "./Components/ProductLists/Mens";
 import Womens from "./Components/ProductLists/Womens";
+import AboutUs from "./Components/AboutUs/AboutUs";
+import NotFound from "./Components/NotFound/NotFound";
+import Success from "./Components/Auth Froms/Success";
 
 const Routing = () => {
   return (
@@ -29,6 +31,10 @@ const Routing = () => {
       <Route path="/favorite" element={<h1>privet</h1>} />
       <Route path="/log-in" element={<LogIn />} />
       <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/signup-success" element={<Success />} />
+
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

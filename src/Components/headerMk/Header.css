@@ -64,13 +64,15 @@ body {
   position: fixed;
   background-color: white;
   /* background-color: rgb(217, 217, 217); */
-  border-radius: 20px;
+  /* border-radius: 20px; */
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
   /* background: none; */
   color: black;
-  top: 10px;
-  left: 25%;
-  height: 97vh;
-  width: 50%;
+  /* top: 10px; */
+  /* left: 25%; */
+  height: 85vh;
+  width: 100%;
   transform: translateY(-110%);
   transition: all 0.9s;
   z-index: 99;
@@ -87,7 +89,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  font-weight: 300;
+  font-weight: 600;
 }
 .auth {
   justify-content: center !important;
@@ -130,9 +132,9 @@ body {
   .text {
     display: none;
   }
-  .sidebar {
+  /* .sidebar {
     width: 50%;
-  }
+  } */
 }
 @media all and (max-width: 540px) {
   .auth {

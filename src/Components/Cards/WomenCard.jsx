@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import CardMedia from "@mui/material/CardMedia";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import BookmarkAddSharpIcon from "@mui/icons-material/BookmarkAddSharp";
+import RemoveShoppingCartSharpIcon from "@mui/icons-material/RemoveShoppingCartSharp";
+
 import BookmarkRemoveSharpIcon from "@mui/icons-material/BookmarkRemoveSharp";
 import "./Cards.css";
 import { CardActionArea, IconButton, Rating } from "@mui/material";
@@ -32,22 +34,22 @@ export default function WomenCard({ item }) {
             </div>
             <h4>{item.price}$</h4>
           </div>
-          <IconButton className="cart">
-            <ShoppingCartIcon />
-          </IconButton>
           <IconButton
             onClick={() => {
               addProductToCart(item);
               setCheckProduct(checkProductInCart(item));
             }}
             className="cart"
-            style={{ marginRight: "35px" }}
           >
             {checkProduct ? (
-              <BookmarkRemoveSharpIcon />
+              <RemoveShoppingCartSharpIcon />
             ) : (
-              <BookmarkAddSharpIcon />
+              <ShoppingCartIcon />
             )}
+          </IconButton>
+          <IconButton className="cart" style={{ marginRight: "35px" }}>
+            {/* <BookmarkRemoveSharpIcon /> */}
+            <BookmarkAddSharpIcon />
           </IconButton>
         </div>
       </div>
