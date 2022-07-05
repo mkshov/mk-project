@@ -9,17 +9,16 @@ import f2 from "../HomePage/img/products/f2.jpg";
 import f3 from "../HomePage/img/products/f3.jpg";
 import f4 from "../HomePage/img/products/f4.jpg";
 import f5 from "../HomePage/img/products/f5.jpg";
-import f6 from "../HomePage/img/products/f6.jpg";
-import f7 from "../HomePage/img/products/f7.jpg";
-import f8 from "../HomePage/img/products/f8.jpg";
 
-import { Box, Button, CardActionArea, IconButton, Rating } from "@mui/material";
+import { Button, CardActionArea, IconButton, Rating } from "@mui/material";
 import { cartContext } from "../../contexts/cartContext";
 import Loading from "./Loading";
+import { authContext } from "../../contexts/authContext";
 
 const MensDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+  const { admin } = useContext(authContext);
   const { getOneMen, oneMen, deleteMen } = useContext(clothesContext);
   const { addProductToCart, checkProductInCart } = useContext(cartContext);
   const [checkProduct, setCheckProduct] = useState(false);
@@ -28,7 +27,7 @@ const MensDetails = () => {
   useEffect(() => {
     getOneMen(id);
   }, []);
-  console.log(oneMen);
+  // console.log(oneMen);
   useEffect(() => {
     if (oneMen) {
       setCheckProduct(checkProductInCart(oneMen));
@@ -41,7 +40,7 @@ const MensDetails = () => {
       ]);
     }
   }, [oneMen]);
-  console.log(oneMen);
+  // console.log(oneMen);
 
   //   console.log(smallImg[1]);
 
@@ -92,25 +91,28 @@ const MensDetails = () => {
               <h4>Products Details</h4>
               <span>{oneMen.description}</span>
               <br />
-              <div style={{ display: "grid", marginTop: "20px" }}>
-                <Button
-                  onClick={() => {
-                    deleteMen(id);
-                    navigate(`/mens`);
-                  }}
-                  style={{ marginBottom: "15px" }}
-                  variant="outlined"
-                  color="error"
-                >
-                  Delete
-                </Button>
-                <Button
-                  variant="outlined"
-                  onClick={() => navigate(`/edit-for-men/${id}`)}
-                >
-                  Edit
-                </Button>
-              </div>
+
+              {admin ? (
+                <div style={{ display: "grid", marginTop: "20px" }}>
+                  <Button
+                    onClick={() => {
+                      deleteMen(id);
+                      navigate(`/mens`);
+                    }}
+                    style={{ marginBottom: "15px" }}
+                    variant="outlined"
+                    color="error"
+                  >
+                    Delete
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    onClick={() => navigate(`/edit-for-men/${id}`)}
+                  >
+                    Edit
+                  </Button>
+                </div>
+              ) : null}
             </div>
           </div>
           <section id="product1" className="section-p1">

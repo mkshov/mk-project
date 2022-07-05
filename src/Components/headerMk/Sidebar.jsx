@@ -7,7 +7,7 @@ import { Button, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Sidebar = () => {
-  const { user, logOut } = useContext(authContext);
+  const { user, logOut, admin } = useContext(authContext);
   const { sidebar, toggleSidebar } = useContext(headerContext);
   const navigate = useNavigate();
   return (
@@ -83,14 +83,17 @@ const Sidebar = () => {
         >
           ADD FOR MEN'S <ArrowForwardIosIcon />
         </li>
-        <li
-          onClick={() => {
-            toggleSidebar();
-            navigate(`/add-for-womens`);
-          }}
-        >
-          ADD FOR WOMEN'S <ArrowForwardIosIcon />
-        </li>
+        {admin ? (
+          <li
+            onClick={() => {
+              toggleSidebar();
+              navigate(`/add-for-womens`);
+            }}
+          >
+            ADD FOR WOMEN'S <ArrowForwardIosIcon />
+          </li>
+        ) : null}
+
         {user ? (
           <li className="auth">
             <Button

@@ -55,7 +55,7 @@ const FavoriteContextProvider = ({ children }) => {
       };
       localStorage.setItem("favorite", JSON.stringify(favorite));
     }
-    console.log(favorite);
+    // console.log(favorite);
     let isProductInFavorite = favorite.favorites.some(
       (item) => item.item.id === product.id
     );

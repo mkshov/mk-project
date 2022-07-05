@@ -50,7 +50,7 @@ const Womens = () => {
   useEffect(() => {
     getWomens();
   }, [searchParams]);
-  console.log(womensPages);
+  // console.log(womensPages);
   return (
     <div
       style={{
