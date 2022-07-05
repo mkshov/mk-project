@@ -58,9 +58,12 @@
     height: 350px;
   }
   .footer-1 {
-    height: 55vh;
+    height: 40vh;
   }
   .footer-3 {
     flex-direction: column;
+    top: 60px;
+    right: 20px;
+    height: 20vh;
   }
 }

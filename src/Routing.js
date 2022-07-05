@@ -16,6 +16,8 @@ import NotFound from "./Components/NotFound/NotFound";
 import Success from "./Components/Auth Froms/Success";
 import Cart from "./Components/LocalHost/Cart";
 import Favorite from "./Components/LocalHost/Favorite";
+import Zakaz from "./Components/PayForm/Zakaz";
+import Pay from "./Components/PayForm/Pay";
 
 const Routing = () => {
   return (
@@ -33,8 +35,10 @@ const Routing = () => {
       <Route path="/favorite" element={<Favorite />} />
       <Route path="/log-in" element={<LogIn />} />
       <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/about-us" element={<AboutUs />} />
-      <Route path="/signup-success" element={<Success />} />
+      <Route path="/impression" element={<AboutUs />} />
+      <Route path="/success" element={<Success />} />
+      <Route path="/order" element={<Zakaz />} />
+      <Route path="/pay" element={<Pay />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>

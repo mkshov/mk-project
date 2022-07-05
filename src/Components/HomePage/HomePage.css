@@ -217,14 +217,26 @@
   flex-direction: column;
 }
 #page-header7 {
-  background-image: url("https://d1csarkz8obe9u.cloudfront.net/posterpreviews/modern-summer-sale-store-banner-design-template-dbfb216461dc03984fa718648b305927_screen.jpg?ts=1561530616");
+  background-image: url("https://img.freepik.com/free-photo/female-friends-out-shopping-together_53876-25041.jpg?w=2000");
   width: 100%;
-  height: 25vh;
+  height: 50vh;
   background-size: cover;
   display: flex;
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  color: white;
+}
+#page-header8 {
+  background-image: url("https://wallpaperaccess.com/full/1496231.jpg");
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  color: white !important;
 }
 #page-header2 h2,
 #page-header2 p {

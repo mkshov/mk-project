@@ -6,7 +6,12 @@ const Success = () => {
   const navigate = useNavigate();
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        marginBottom: "200px",
+      }}
     >
       <div style={{ marginTop: "100px" }}>
         <img

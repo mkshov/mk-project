@@ -8,6 +8,7 @@ const Footer = () => {
     <div className="footer-1">
       <div style={{ height: "15vh" }}></div>
       <div className="footer-2">
+        lololol
         <div className="footer-3">
           <div className="footer-4">
             <Typography variant="h5">Lorem, ipsum dolor.</Typography>

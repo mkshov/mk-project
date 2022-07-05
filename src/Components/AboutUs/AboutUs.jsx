@@ -72,7 +72,7 @@ const AboutUs = () => {
         strength={-700}
       >
         <section id="page-header3">
-          <h2 style={{ position: position }}>WHO WE ARE?</h2>
+          <h2 style={{ position: position }}>YOUR IMPRESSIONS</h2>
         </section>
       </Parallax>
       <div

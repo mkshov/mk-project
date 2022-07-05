@@ -34,7 +34,7 @@ const Mens = () => {
       price_gte: price[0],
       price_lte: price[1],
       _page: page,
-      _limit: 15,
+      _limit: 5,
     });
   }, []);
   useEffect(() => {
@@ -43,7 +43,7 @@ const Mens = () => {
       price_gte: price[0],
       price_lte: price[1],
       _page: page,
-      _limit: 15,
+      _limit: 5,
     });
   }, [search, price, page]);
   // console.log(mensPages);

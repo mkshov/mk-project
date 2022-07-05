@@ -4,7 +4,10 @@ import { clothesContext } from "../../contexts/clothesContext";
 import CircularProgress from "@mui/material/CircularProgress";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "../HomePage/HomePage.css";
-
+import f5 from "../HomePage/img/products/f5.jpg";
+import f6 from "../HomePage/img/products/f6.jpg";
+import f7 from "../HomePage/img/products/f7.jpg";
+import f8 from "../HomePage/img/products/f8.jpg";
 import { Button, CardActionArea, IconButton, Rating } from "@mui/material";
 
 const WomensDetails = () => {
@@ -98,10 +101,7 @@ const WomensDetails = () => {
             <div className="pro-container">
               <div className="pro">
                 <CardActionArea style={{ borderRadius: "25px" }}>
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    alt=""
-                  />
+                  <img src={f5} alt="" />
                 </CardActionArea>
                 <div className="des">
                   <span className="sp">adidas</span>
@@ -115,10 +115,7 @@ const WomensDetails = () => {
               </div>
               <div className="pro">
                 <CardActionArea style={{ borderRadius: "25px" }}>
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    alt=""
-                  />
+                  <img src={f6} alt="" />
                 </CardActionArea>
                 <div className="des">
                   <span className="sp">adidas</span>
@@ -132,10 +129,7 @@ const WomensDetails = () => {
               </div>
               <div className="pro">
                 <CardActionArea style={{ borderRadius: "25px" }}>
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    alt=""
-                  />
+                  <img src={f7} alt="" />
                 </CardActionArea>
                 <div className="des">
                   <span className="sp">adidas</span>
@@ -149,10 +143,7 @@ const WomensDetails = () => {
               </div>
               <div className="pro">
                 <CardActionArea style={{ borderRadius: "25px" }}>
-                  <img
-                    src="https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw2761b9e1/images/zoom/G8NC5ZG7C8A_N0000_2.jpg?sw=640&sh=816&sm=fit"
-                    alt=""
-                  />
+                  <img src={f8} alt="" />
                 </CardActionArea>
                 <div className="des">
                   <span className="sp">adidas</span>

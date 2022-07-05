@@ -26,7 +26,8 @@ import BookmarkRemoveSharpIcon from "@mui/icons-material/BookmarkRemoveSharp";
 import { favoriteContextWomen } from "../../contexts/favoriteContextWomen";
 import { Parallax } from "react-parallax";
 import "../HomePage/HomePage.css";
-import b1 from "../IMGS/banner/b1.jpg";
+// import b1 from "../IMGS/banner/b1.jpg";
+import b1 from "../IMGS/banner/b17.jpg";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };

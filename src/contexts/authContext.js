@@ -1,13 +1,13 @@
 import React, { createContext, useState, useEffect } from "react";
 import fire from "../fire";
 import "firebase/firestore";
+
 export const authContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState("");
   const [error, setError] = useState("");
   const [admin, setAdmin] = useState(false);
-
   // для регистрации
   function signUp(email, password, navigate) {
     console.log(email, password);

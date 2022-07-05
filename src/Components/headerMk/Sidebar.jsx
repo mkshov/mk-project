@@ -13,6 +13,17 @@ const Sidebar = () => {
   return (
     <div className={sidebar ? "sidebar sidebar--open" : "sidebar"}>
       <div className="sidebar-container">
+        {user ? (
+          <li
+            onClick={() => {
+              toggleSidebar();
+              navigate(`/`);
+            }}
+          >
+            My Account: {user.email}
+          </li>
+        ) : null}
+
         <li
           onClick={() => {
             toggleSidebar();
@@ -58,10 +69,10 @@ const Sidebar = () => {
         <li
           onClick={() => {
             toggleSidebar();
-            navigate(`/about-us`);
+            navigate(`/impression`);
           }}
         >
-          ABOUT US
+          IMPRESSIONS
           <ArrowForwardIosIcon />
         </li>
         <li

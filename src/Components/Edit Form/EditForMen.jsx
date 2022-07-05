@@ -23,6 +23,9 @@ const EditForMen = () => {
       description,
       price,
       image,
+      smallImg1,
+      smallImg2,
+      smallImg3,
     };
     if (!title.trim() || !description.trim() || !price) {
       alert("Fill to the filds");

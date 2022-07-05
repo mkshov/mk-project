@@ -103,4 +103,7 @@ header {
   .search-box:hover > .search-input {
     width: 50%;
   }
+  .pay-respon {
+    width: 90% !important;
+  }
 }
