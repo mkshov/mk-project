@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
   font-family: "Raleway", sans-serif !important;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum";
+  /* vendor-prefixes */
+  -moz-font-feature-settings: "lnum=1";
+  -ms-font-feature-settings: "lnum";
+  -webkit-font-feature-settings: "lnum";
+  -o-font-feature-settings: "lnum";
 }
 
 header {
@@ -67,6 +74,16 @@ header {
 }
 .small-slider {
   display: none !important;
+}
+
+.favorite-hover:hover {
+  background-color: #f6f6f6;
+  margin-left: 15px;
+  transition: 0.5s;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+
+  box-shadow: 2px 2px 2px #00000045;
 }
 
 @media all and (max-width: 666px) {

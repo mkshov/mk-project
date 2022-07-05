@@ -3,10 +3,12 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
-import React from "react";
+import React, { useContext } from "react";
+import { commentsContext } from "../../contexts/commentsContext";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const CommentCard = ({ item }) => {
   //   console.log(item);
+
   return (
     <div
       style={{

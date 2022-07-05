@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import fire from "../fire";
+import "firebase/firestore";
 export const authContext = createContext();
 
 const AuthContextProvider = ({ children }) => {

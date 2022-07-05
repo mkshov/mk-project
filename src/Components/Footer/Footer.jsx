@@ -1,5 +1,6 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
+import { cartContext } from "../../contexts/cartContext";
 import "./Footer.css";
 
 const Footer = () => {
@@ -19,6 +20,7 @@ const Footer = () => {
         </div>
       </div>
       <div
+        className="respons"
         style={{
           backgroundColor: "#192136",
           height: "35vh",
@@ -28,6 +30,7 @@ const Footer = () => {
         }}
       >
         <div
+          className="for-hover"
           style={{
             marginTop: "50px",
             color: "white",
@@ -44,6 +47,7 @@ const Footer = () => {
           <Typography variant="subtitle">FAQs</Typography>
         </div>
         <div
+          className="for-hover"
           style={{
             marginTop: "50px",
             color: "white",
@@ -60,6 +64,7 @@ const Footer = () => {
           <Typography variant="subtitle">FAQs</Typography>
         </div>
         <div
+          className="for-hover"
           style={{
             marginTop: "50px",
             color: "white",
@@ -71,31 +76,22 @@ const Footer = () => {
           <Typography variant="h5" style={{ marginBottom: "20px" }}>
             Lorem ipsum dolor sit amet.
           </Typography>
-          <Typography variant="subtitle">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          </Typography>
           <Box>
             <TextField
               size="small"
               variant="outlined"
-              style={{ height: "30px", marginRight: "10px" }}
+              label="Email"
+              style={{
+                height: "30px",
+                marginRight: "10px",
+                color: "white",
+              }}
             />
             <Button
               style={{ backgroundColor: "rgb(109, 73, 245)", color: "white" }}
             >
               Subscribe
             </Button>
-            {/* <div className="f_social_icon">
-              <a href="https://www.instagram.com/mkshov/">
-                <BsFacebook />
-              </a>
-              <a href="https://www.instagram.com/mkshov/">
-                <BsInstagram />
-              </a>
-              <a href="https://www.instagram.com/mkshov/">
-                <BsTelegram />
-              </a>
-            </div> */}
           </Box>
         </div>
       </div>

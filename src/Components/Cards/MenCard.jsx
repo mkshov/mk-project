@@ -9,11 +9,18 @@ import RemoveShoppingCartSharpIcon from "@mui/icons-material/RemoveShoppingCartS
 import { useNavigate } from "react-router-dom";
 import { clothesContext } from "../../contexts/clothesContext";
 import { cartContext } from "../../contexts/cartContext";
+import { favoriteContext } from "../../contexts/favoriteContext";
 
 export default function MenCard({ item }) {
   const navigate = useNavigate();
   const { addProductToCart, checkProductInCart } = useContext(cartContext);
   const [checkProduct, setCheckProduct] = useState(checkProductInCart(item));
+
+  const { addProductToFavorite, checkProductInFavorite } =
+    useContext(favoriteContext);
+  const [checkFavorite, setCheckFavorite] = useState(
+    checkProductInFavorite(item)
+  );
 
   return (
     <div id="product" className="section-p">
@@ -48,9 +55,19 @@ export default function MenCard({ item }) {
               <ShoppingCartIcon />
             )}
           </IconButton>
-          <IconButton className="cart" style={{ marginRight: "35px" }}>
-            {/* <BookmarkRemoveSharpIcon /> */}
-            <BookmarkAddSharpIcon />
+          <IconButton
+            onClick={() => {
+              addProductToFavorite(item);
+              setCheckFavorite(checkProductInFavorite(item));
+            }}
+            className="cart"
+            style={{ marginRight: "35px" }}
+          >
+            {checkFavorite ? (
+              <BookmarkRemoveSharpIcon />
+            ) : (
+              <BookmarkAddSharpIcon />
+            )}
           </IconButton>
         </div>
       </div>

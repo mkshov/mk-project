@@ -8,6 +8,7 @@ const API = "http://localhost:8000/comments";
 
 const INIT_STATE = {
   comments: [],
+  likes: {},
   commentsPages: 0,
 };
 
@@ -19,9 +20,6 @@ function reducer(state = INIT_STATE, action) {
         comments: action.payload.data,
         commentsPages: Math.ceil(action.payload.headers["x-total-count"] / 5),
       };
-
-    default:
-      return state;
   }
 }
 
@@ -51,7 +49,6 @@ const CommentsContextProvider = ({ children }) => {
   async function editComments(id, editedComment) {
     await axios.patch(`${API}/${id}`, editedComment);
   }
-
   return (
     <commentsContext.Provider
       value={{

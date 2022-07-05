@@ -30,12 +30,14 @@ import banner1 from "./img/hero4.png";
 import banner2 from "./img/b2.jpg";
 
 import { Parallax } from "react-parallax";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+  const navigate = useNavigate();
   return (
     <>
       {/* First block */}
@@ -50,7 +52,9 @@ const HomePage = () => {
             <h2>Super value deals</h2>
             <h1 id="h-color">On all products</h1>
             <p id="p-h-color">Save more with coupons & up to 70% off!</p>
-            <Button variant="outlined">Shop Now</Button>
+            <Button onClick={() => navigate(`/mens`)} variant="outlined">
+              Shop Now
+            </Button>
           </div>
         </section>
       </Parallax>

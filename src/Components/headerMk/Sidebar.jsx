@@ -37,8 +37,22 @@ const Sidebar = () => {
         >
           WOMANS <ArrowForwardIosIcon />
         </li>
-        <li onClick={() => toggleSidebar()}>
+        <li
+          onClick={() => {
+            toggleSidebar();
+            navigate(`/cart`);
+          }}
+        >
           CART
+          <ArrowForwardIosIcon />
+        </li>
+        <li
+          onClick={() => {
+            toggleSidebar();
+            navigate(`/favorite`);
+          }}
+        >
+          FAVORITE
           <ArrowForwardIosIcon />
         </li>
         <li

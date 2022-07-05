@@ -20,6 +20,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import GoogleIcon from "@mui/icons-material/Google";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import KeyIcon from "@mui/icons-material/Key";
+import GoogleAuth from "../Auth Froms/Authorization/Google/GoogleAuthForm";
 // import "./LoginForm.css";
 
 const LogIn = () => {
@@ -132,6 +133,23 @@ const LogIn = () => {
                       label="Password"
                       variant="outlined" */}
                 </div>
+                {error ? (
+                  <Alert style={{ marginTop: "10px" }} severity="error">
+                    The email or password was entered incorrectly.
+                    <a
+                      onClick={() => navigate(`/sign-up`)}
+                      style={{
+                        color: "#1674ff",
+                        cursor: "pointer",
+                        textDecoration: "underline",
+                      }}
+                      className="register"
+                    >
+                      Register
+                    </a>
+                    or try again.
+                  </Alert>
+                ) : null}
                 <Button
                   onClick={(e) => handleSave(e)}
                   variant="contained"
@@ -139,17 +157,7 @@ const LogIn = () => {
                 >
                   Sign In
                 </Button>
-                <Button
-                  variant="contained"
-                  style={{
-                    marginTop: "10px",
-                    backgroundColor: "white",
-                    color: "black",
-                  }}
-                >
-                  Sign In with &nbsp;
-                  <GoogleIcon style={{ color: "#de3b2b" }} /> oogle
-                </Button>
+                <GoogleAuth />
                 <div>
                   <p>
                     If you don’t have an account, &nbsp;

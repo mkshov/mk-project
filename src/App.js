@@ -13,33 +13,39 @@ import CartContextProvider, { cartContext } from "./contexts/cartContext";
 import SpeedDialMen from "./Components/SpeedDial/SpeedDial";
 import CommentsContextProvider from "./contexts/commentsContext";
 import Footer from "./Components/Footer/Footer";
+import FavoriteContextProvider from "./contexts/favoriteContext";
+import WomenFavoriteContextProvider from "./contexts/favoriteContextWomen";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <CartContextProvider>
-          <CommentsContextProvider>
-            <ClothesContextProvider>
-              <HeaderContextProvider>
-                <Container
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
-                    flexFlow: "wrap",
-                  }}
-                >
-                  <Header />
-                </Container>
-                <Sidebar />
-                <BackDrop />
-                <Routing />
-                <Footer />
-              </HeaderContextProvider>
-            </ClothesContextProvider>
-          </CommentsContextProvider>
-        </CartContextProvider>
+        <WomenFavoriteContextProvider>
+          <FavoriteContextProvider>
+            <CartContextProvider>
+              <CommentsContextProvider>
+                <ClothesContextProvider>
+                  <HeaderContextProvider>
+                    <Container
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "column",
+                        flexFlow: "wrap",
+                      }}
+                    >
+                      <Header />
+                    </Container>
+                    <Sidebar />
+                    <BackDrop />
+                    <Routing />
+                    <Footer />
+                  </HeaderContextProvider>
+                </ClothesContextProvider>
+              </CommentsContextProvider>
+            </CartContextProvider>
+          </FavoriteContextProvider>
+        </WomenFavoriteContextProvider>
       </AuthContextProvider>
     </BrowserRouter>
   );

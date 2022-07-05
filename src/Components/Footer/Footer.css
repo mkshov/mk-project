@@ -40,43 +40,27 @@
   display: flex;
   align-items: center;
 }
+
 .footer-btn1 {
   height: 40px !important;
   background-color: rgb(109, 73, 245) !important;
   color: white !important;
 }
-a:hover,
-a:focus,
-.btn:hover,
-.btn:focus,
-button:hover,
-button:focus {
-  text-decoration: none;
-  outline: none;
+.for-hover span:hover {
+  font-weight: 700;
 }
-.f_social_icon a {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  font-size: 14px;
-  line-height: 45px;
-  color: #858da8;
-  display: inline-block;
-  background: #ebeef5;
-  text-align: center;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-.ti-facebook:before {
-  content: "\e741";
-}
-.ti-twitter-alt:before {
-  content: "\e74b";
-}
-.ti-vimeo-alt:before {
-  content: "\e74a";
-}
-.ti-pinterest:before {
-  content: "\e731";
+
+@media all and (max-width: 700px) {
+  .respons {
+    display: none !important;
+  }
+  .footer-2 {
+    height: 350px;
+  }
+  .footer-1 {
+    height: 55vh;
+  }
+  .footer-3 {
+    flex-direction: column;
+  }
 }

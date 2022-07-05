@@ -9,11 +9,18 @@ import "./Cards.css";
 import { CardActionArea, IconButton, Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { cartContext } from "../../contexts/cartContext";
+import { favoriteContextWomen } from "../../contexts/favoriteContextWomen";
 
 export default function WomenCard({ item }) {
   const navigate = useNavigate();
   const { addProductToCart, checkProductInCart } = useContext(cartContext);
   const [checkProduct, setCheckProduct] = useState(checkProductInCart(item));
+
+  const { addProductToWomenFavorite, checkProductInWomenFavorite } =
+    useContext(favoriteContextWomen);
+  const [checkWomenFavorite, setCheckWomenFavorite] = useState(
+    checkProductInWomenFavorite(item)
+  );
   return (
     <div id="product" className="section-p">
       <div className="pro-container">
@@ -47,9 +54,19 @@ export default function WomenCard({ item }) {
               <ShoppingCartIcon />
             )}
           </IconButton>
-          <IconButton className="cart" style={{ marginRight: "35px" }}>
-            {/* <BookmarkRemoveSharpIcon /> */}
-            <BookmarkAddSharpIcon />
+          <IconButton
+            onClick={() => {
+              addProductToWomenFavorite(item);
+              setCheckWomenFavorite(checkProductInWomenFavorite(item));
+            }}
+            className="cart"
+            style={{ marginRight: "35px" }}
+          >
+            {checkWomenFavorite ? (
+              <BookmarkRemoveSharpIcon />
+            ) : (
+              <BookmarkAddSharpIcon />
+            )}
           </IconButton>
         </div>
       </div>

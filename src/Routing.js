@@ -14,6 +14,8 @@ import Womens from "./Components/ProductLists/Womens";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import NotFound from "./Components/NotFound/NotFound";
 import Success from "./Components/Auth Froms/Success";
+import Cart from "./Components/LocalHost/Cart";
+import Favorite from "./Components/LocalHost/Favorite";
 
 const Routing = () => {
   return (
@@ -27,8 +29,8 @@ const Routing = () => {
       <Route path="/add-for-womens" element={<AddForWomens />} />
       <Route path="/edit-for-men/:id" element={<EditForMen />} />
       <Route path="/edit-for-womens/:id" element={<EditForWomen />} />
-      <Route path="/cart" element={<h1>privet</h1>} />
-      <Route path="/favorite" element={<h1>privet</h1>} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/favorite" element={<Favorite />} />
       <Route path="/log-in" element={<LogIn />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/about-us" element={<AboutUs />} />
